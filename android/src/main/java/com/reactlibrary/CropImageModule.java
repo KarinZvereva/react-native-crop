@@ -41,7 +41,7 @@ public class CropImageModule extends ReactContextBaseJavaModule {
             Bitmap bitmap = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
 
             CropResult newBitmap = this.analyze(bitmap);
-            System.out.println("X: " + newBitmap.topCrop.x + "  Y: " + newBitmap.topCrop.y);
+
             String result = convertToBase64(newBitmap.resultImage);
 
             callback.invoke(null, result);
